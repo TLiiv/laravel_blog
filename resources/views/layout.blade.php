@@ -10,6 +10,7 @@
 
 <body>
 
+
 @yield('content')
 </body>
 
