@@ -19,7 +19,7 @@ Route::get('/', function () {
         'posts' => Post::latest()->get(),
         'categories' => Category::all()
     ]);
-});
+})->name('home');
 
 
 
@@ -65,4 +65,4 @@ Route::get('authors/{author:username}',function(User $author){
         'posts' => $author->posts,
         'categories' => Category::all()
     ]);
-});
+})->name('category');
