@@ -10,13 +10,13 @@ class PostsController extends Controller
     public function index(){
         //dd(request(['search']));
         return view('posts.index', [
-            'posts' => Post::latest()->filter(request(['search','category']))->get()
+            'posts' => Post::latest()->filter(request(['search','category','author']))->get()
         ]);
     }
 
     public function show(Post $post){
       //Find a post by its slug and pass it to a view called "post"
-      return view('post.show',[
+      return view('posts.show',[
         'post' => $post
     ]);
     }
