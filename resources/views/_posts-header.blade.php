@@ -16,10 +16,10 @@
                <x-dropdown-item href="/" :active="request()->routeIs('home')">
                 All
                </x-dropdown-item>
-                @foreach ($categories as $category)
 
+                @foreach ($categories as $category)
                 <x-dropdown-item
-                href="/categories/{{ $category->slug }}"
+                href="/?category={{ $category->slug }}"
                :active='request()->is("categories/{$category->slug}")'
                 >
                     {{--  ? 'bg-blue-500 text-white' : '' }}"> --}}
