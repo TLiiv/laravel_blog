@@ -18,6 +18,8 @@ class RegisterController extends Controller
             'email' => ['required','email','max:255','min:3'],
             'username' => ['required','max:255','min:3']
         ]);
+
+        // $attributes['password'] = bcrypt($attributes['password']);
         User::create($attributes);
 
         return redirect('/');
