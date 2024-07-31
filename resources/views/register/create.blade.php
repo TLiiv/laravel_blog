@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+<section class="px-6 py-6">
    <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
     <h1 class="text-center font-bold text-xl">Register</h1>
 
