@@ -11,25 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('category_id');
-            $table->string('slug')->unique();
-            $table->string('title');
-            $table->text('excerpt');
+            $table->foreignId('post_id')->references('id')->on('posts')->cascadeOnDelete;
+            $table->foreignId('user_id')->references('id')->on('posts')->cascadeOnDelete;
             $table->text('body');
             $table->timestamps();
-            $table->timestamp('published_at')->nullable();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('comments');
     }
 };
