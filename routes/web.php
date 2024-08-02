@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsCommentsController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
@@ -9,6 +10,7 @@ Route::get('/', [PostsController::class,'index'])->name('home');
 
 //Koos route model bindinguga
 Route::get('posts/{post:slug}', [PostsController::class,'show']);
+Route::post('posts/{post:slug}/comments',[PostsCommentsController::class,'store']);
 
 Route::get('register',[RegisterController::class,'create'])->middleware('guest');
 Route::post('register',[RegisterController::class,'store'])->middleware('guest');
