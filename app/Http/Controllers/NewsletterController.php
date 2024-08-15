@@ -9,7 +9,7 @@ use Exception;
 
 class NewsletterController extends Controller
 {
-    public function __invoke(Newsletter $newsletter)
+    public function __invoke(Newsletterw $newsletter)
     {
 
         request()->validate(['email' => 'required|email']);
